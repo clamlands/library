@@ -5,6 +5,7 @@ let buttons = []; // to be used as a Read Status button node list
 let readStatus = []; // to be used as a node list for "Finished reading?" text content
 let deleteButtons = []; // to be used as a node list for Delete buttons
 let cardList = []; // nodelist of all the cards
+const cards = document.getElementById("cards"); // points to the cards container
 
 // Book constructor adds book objects to myLibrary
 function Book(title, author, pages, read) {
@@ -14,14 +15,24 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
+
 // takes user input and adds object to the myLibrary array
 function addBookToLibrary(title, author, pages, read){
     myLibrary.push(new Book(title, author, pages, read));
-    createCard(myLibrary[myLibrary.length - 1]); //calls createCard with the last item in the array as a parameter
+    //calls createCard with the last item in the array as a parameter
+    createCard(myLibrary[myLibrary.length - 1]); 
 }
 
-// points to the cards container
-const cards = document.getElementById("cards");
+//for auto-population of cards
+addBookToLibrary("Harry Potter and the Sorcerer's Stone", "JK Rowling", "394", "Yes");
+addBookToLibrary("Gone With the Breeze", "Joe Shmoe", "47", "Yes");
+addBookToLibrary("The Guy that did Stuff", "Elisha Long", "428", "Yes");
+addBookToLibrary("Butterflies and Rainbows", "Steven King", "280", "No");
+addBookToLibrary("No Way", "Hydro Flask", "46", "Yes");
+addBookToLibrary("Fairly Odd Parents", "Timmy Turner", "250", "No");
+addBookToLibrary("Hey Arnold", "Mr. Universe", "666", "No");
+
+
 
 // calling this function will create a card based on the last item in myLibrary array
 function createCard(book) {
