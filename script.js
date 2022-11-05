@@ -8,12 +8,26 @@ let cardList = []; // nodelist of all the cards
 const cards = document.getElementById("cards"); // points to the cards container
 
 // Book constructor adds book objects to myLibrary
+
+/*
 function Book(title, author, pages, read) {
     this.title = title
     this.author = author
     this.pages = pages
     this.read = read
 }
+*/
+
+//Book class adds book objects to myLibrary
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+    }
+}
+
 
 
 // takes user input and adds object to the myLibrary array
